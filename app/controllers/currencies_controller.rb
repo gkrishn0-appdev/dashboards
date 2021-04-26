@@ -30,7 +30,9 @@ class CurrenciesController < ApplicationController
    @string2 = "https://api.exchangerate.host/convert?from=" + @first.to_s + "&to=" + @second.to_s
    @raw_data2 = open(@string2).read
    @parsed_data2 = JSON.parse(@raw_data2)
-  #@symbols2 = @parsed_data.fetch("query")
+   p @parsed_data2
+   @symbols2 = @parsed_data2.fetch("info").fetch("rate")
+   #@array_of_symbols2 = @symbols2_hash.keys
    #@symbols_hash = @parsed_data.fetch("symbols2")
    #render({ :template => "currency_templates/step_one.html.erb"})
    #render({ :template => "currency_templates/step_two.html.erb"})
