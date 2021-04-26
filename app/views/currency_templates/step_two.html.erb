@@ -1,0 +1,16 @@
+<h1> Convert <%= @first %> </h1>
+
+<p>
+<p>Go <a href="/forex">back</a></p>
+
+</p>
+
+<ul>
+<% @array_of_symbols.each do |a_symbol| %>
+ <li>
+      <a href="/forex/<%= @first %>/<%= a_symbol %>">
+        Convert 1 <%= @first %> to <%= a_symbol %>
+      </a>
+    </li>
+        <% end %>
+    </ul>
